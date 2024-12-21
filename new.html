@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Commerce</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <style>
+        body {
+            padding-top: 56px; /* espace pour la barre de navigation fixe */
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .icons {
+            display: flex;
+            align-items: center;
+        }
+        .cart {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .cart img {
+            height: 30px;
+            margin-right: 5px;
+        }
+        .search-form {
+            width: 100%;
+            max-width: 400px; /* largeur maximale pour la barre de recherche */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container d-flex justify-content-between">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="Mon Logo">
+                    <span>shoping</span>
+                </a>
+                <div class="d-flex align-items-center">
+                    <div class="icons d-flex">
+                        <div class="cart">
+                            <img src="téléchargement.png" alt="Panier"> <!-- Assurez-vous d'avoir une image pour le panier -->
+                            <span>Panier</span>
+                        </div>
+                        <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Se connecter</button>
+                        <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#signupModal">S'inscrire</button>
+                    </div>
+                </div>
+            </div>
+            <form class="d-flex justify-content-center search-form">
+                <input class="form-control me-2" type="search" placeholder="Rechercher..." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Rechercher</button>
+            </form>
+        </nav>
+      
+        <!-- Modal de connexion -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Connexion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="loginEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Mot de passe</label>
+                                <input type="password" class="form-control" id="loginPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Se connecter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <!-- Modal d'inscription -->
+        <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-d-">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="signupModalLabel">S'inscrire</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="signupEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Mot de passe</label>
+                                <input type="password" class="form-control" id="signupPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">S'inscrire</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- MENU -->
+
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('menu1.jpg');">
+                <div class="container">
+                    <div class="carousel-caption ">
+                        <h1 style="font-size: 3rem;">Welcome to Our Website</h1>
+                        <p style="font-size: 1.2rem;">Discover amazing products and offers just for you.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('menu2.jpg');">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1 style="font-size: 3rem;">Explore New Arrivals</h1>
+                        <p style="font-size: 1.2rem;">Check out our latest products that suit your style.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('menu3.jpg');">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1 style="font-size: 3rem;">Join Our Community</h1>
+                        <p style="font-size: 1.2rem;">Become a part of our vibrant community today!</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+    <style>
+    .carousel-item {
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        background-size: cover; 
+        height: 90vh; 
+        color: white;
+    }
+    
+    .carousel-caption h1 {
+        font-weight: bold;
+    }
+    
+    .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+    }
+    </style>
+    
+
+
+    <section>
+        <h2 class="text-center mb-4 mt-4">Découvertes</h2>
+        <div id="productCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card product">
+                                <img src="deco1.jpg" class="card-img-top" alt="Produit 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Produit 1</h5>
+                                    <p class="card-text">Description détaillée du produit 1.</p>
+                                    <button class="btn btn-primary" onclick="showDetails('Produit 1', '10€', 'Rouge', 'M', 'deco1.jpg')">Détails</button>
+                                    <button class="btn btn-success" onclick="addToWishlist('Produit 1')">Ajouter aux favoris</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card product">
+                                <img src="deco2.jpg" class="card-img-top" alt="Produit 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Produit 2</h5>
+                                    <p class="card-text">Description détaillée du produit 2.</p>
+                                    <button class="btn btn-primary" onclick="showDetails('Produit 2', '15€', 'Bleu', 'L', 'deco2.jpg')">Détails</button>
+                                    <button class="btn btn-success" onclick="addToWishlist('Produit 2')">Ajouter aux favoris</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card product">
+                                <img src="deco3.jpg" class="card-img-top" alt="Produit 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Produit 3</h5>
+                                    <p class="card-text">Description détaillée du produit 3.</p>
+                                    <button class="btn btn-primary" onclick="showDetails('Produit 3', '20€', 'Vert', 'S', 'deco3.jpg')">Détails</button>
+                                    <button class="btn btn-success" onclick="addToWishlist('Produit 3')">Ajouter aux favoris</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card product">
+                                <img src="deco4.jpg" class="card-img-top" alt="Produit 4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Produit 4</h5>
+                                    <p class="card-text">Description détaillée du produit 4.</p>
+                                    <button class="btn btn-primary" onclick="showDetails('Produit 4', '25€', 'Jaune', 'XL', 'deco4.jpg')">Détails</button>
+                                    <button class="btn btn-success" onclick="addToWishlist('Produit 4')">Ajouter aux favoris</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card product">
+                                <img src="deco5.jpg" class="card-img-top" alt="Produit 5">
+                                <div class="card-body">
+                                    <h5 class="card-title">Produit 5</h5>
+                                    <p class="card-text">Description détaillée du produit 5.</p>
+                                    <button class="btn btn-primary" onclick="showDetails('Produit 5', '30€', 'Noir', 'M', 'deco5.jpg')">Détails</button>
+                                    <button class="btn btn-success" onclick="addToWishlist('Produit 5')">Ajouter aux favoris</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card product">
+                                <img src="deco6.jpg" class="card-img-top" alt="Produit 6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Produit 6</h5>
+                                    <p class="card-text">Description détaillée du produit 6.</p>
+                                    <button class="btn btn-primary" onclick="showDetails('Produit 6', '35€', 'Blanc', 'L', 'deco6.jpg')">Détails</button>
+                                    <button class="btn btn-success" onclick="addToWishlist('Produit 6')">Ajouter aux favoris</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Précédent</span>
+            </a>
+            <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Suivant</span>
+            </a> -->
+        </div>
+    </section>
+
+ <!-- Modal Détails Produit -->
+ <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailsModalLabel">Détails du Produit</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="modalProductImage" class="img-fluid" alt="Produit">
+                <h5 id="productName"></h5>
+                <p id="productPrice"></p>
+                <p id="productColor"></p>
+                <p id="productSize"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-success">Acheter</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- section categorie -->
+<div>
+    <h2 class="text-center">Catégories</h2>
+    
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Découvrez notre première catégorie ! <span class="text-muted">Vous serez émerveillé.</span></h2>
+            <p class="lead">Plongez dans un monde fascinant rempli de découvertes étonnantes. Cette catégorie est une véritable porte d'entrée vers des contenus qui captivent l'imagination. Que vous soyez passionné par l'art, la science ou les technologies, chaque article vous invitera à explorer des idées nouvelles et enrichissantes. Préparez-vous à être inspiré par des récits qui nourrissent votre curiosité et élargissent vos horizons !</p>
+        </div>
+        <div class="col-md-5">
+            <!-- Remplacez le src ci-dessous par le chemin de votre image -->
+            <img src="cat1.jpg" alt="Description de l'image de la première catégorie" class="img-fluid mx-auto" width="500" height="500">
+        </div>
+    </div>
+
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Notre deuxième catégorie vous attend ! <span class="text-muted">Venez découvrir par vous-même.</span></h2>
+            <p class="lead">Explorez une sélection de contenus enrichissants qui stimulent la réflexion et encouragent le débat. Chaque article est soigneusement élaboré pour vous offrir des perspectives variées sur des sujets contemporains. Que vous soyez en quête d'informations sur les tendances actuelles ou d'analyses approfondies, cette catégorie est conçue pour éveiller votre esprit critique et vous engager dans des discussions passionnantes. Ne manquez pas cette chance d'élargir vos connaissances et d'être à la pointe de l'actualité !</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <!-- Remplacez le src ci-dessous par le chemin de votre image -->
+            <img src="cat2.jpg" alt="Description de l'image de la deuxième catégorie" class="img-fluid mx-auto" width="500" height="500">
+        </div>
+    </div>
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Explorez notre troisième catégorie ! <span class="text-muted">C'est vraiment exceptionnel.</span></h2>
+            <p class="lead">Cette catégorie regroupe des contenus variés qui éveilleront votre curiosité et vous inviteront à réfléchir. Des récits captivants aux analyses détaillées, chaque élément a été soigneusement choisi pour enrichir votre expérience. Vous découvrirez des histoires inspirantes, des interviews de personnalités influentes, et des réflexions sur des sujets qui nous touchent tous. Rejoignez-nous pour un voyage intellectuel et émotionnel qui ne manquera pas de vous captiver à chaque étape.</p>
+        </div>
+        <div class="col-md-5">
+            <!-- Remplacez le src ci-dessous par le chemin de votre image -->
+            <img src="cat3.jpg" alt="Description de l'image de la troisième catégorie" class="img-fluid mx-auto" width="500" height="500">
+        </div>
+    </div>
+</div>
+
+ <!-- section footer-->
+<footer class="bg-dark text-white mt-4 py-4">
+    <div class="container text-center">
+        <p class="mb-3">&copy; 2024 Mon Site de Commerce</p>
+        <div class="footer-links mb-4">
+            <a href="#" class="text-white mx-3">Politique de confidentialité</a>
+            <a href="#" class="text-white mx-3">CGV</a>
+            <a href="#" class="text-white mx-3">Contact</a>
+        </div>
+        <h6>Suivez-nous sur :</h6>
+        <div class="d-flex justify-content-center mt-3">
+            <a href="#" class="text-white mx-4 text-center">
+                <i class="fab fa-facebook fa-lg"></i>
+                <span class="d-block mt-1">Facebook</span>
+            </a>
+            <a href="#" class="text-white mx-4 text-center">
+                <i class="fab fa-whatsapp fa-lg"></i>
+                <span class="d-block mt-1">WhatsApp</span>
+            </a>
+            <a href="#" class="text-white mx-4 text-center">
+                <i class="fab fa-twitter fa-lg"></i>
+                <span class="d-block mt-1">Twitter</span>
+            </a>
+            <a href="#" class="text-white mx-4 text-center">
+                <i class="fab fa-google fa-lg"></i>
+                <span class="d-block mt-1">Google</span>
+            </a>
+            <a href="#" class="text-white mx-4 text-center">
+                <i class="fab fa-instagram fa-lg"></i>
+                <span class="d-block mt-1">Instagram</span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- Assurez-vous d'inclure Font Awesome dans le <head> de votre document -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.js"></script>
+<script>
+    function showDetails(name, price, color, size, image) {
+        document.getElementById('productName').innerText = name;
+        document.getElementById('productPrice').innerText = 'Prix : ' + price;
+        document.getElementById('productColor').innerText = 'Couleur : ' + color;
+        document.getElementById('productSize').innerText = 'Taille : ' + size;
+        document.getElementById('modalProductImage').src = image;
+        $('#detailsModal').modal('show');
+    }
+
+    function addToWishlist(productName) {
+        alert(productName + " a été ajouté à vos favoris !");
+    }
+</script>
+
+
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    
+   
+</body>
+</html>
